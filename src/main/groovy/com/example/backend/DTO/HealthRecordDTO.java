@@ -8,8 +8,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class HealthRecordDTO {
-
-    private Long id;
     private int baseYear;
     private int subscriberId;
     private int cityCode;

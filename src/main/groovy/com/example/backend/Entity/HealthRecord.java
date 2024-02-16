@@ -9,6 +9,8 @@ import lombok.Setter;
 @Data
 @Entity
 @Table(name = "health_records")
+@Getter
+@Setter
 public class HealthRecord {
 
     @Id

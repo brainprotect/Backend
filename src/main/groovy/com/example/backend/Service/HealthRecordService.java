@@ -1,15 +1,12 @@
+// HealthRecordService.java
 package com.example.backend.Service;
 
 import com.example.backend.Bean.HealthRecordMapper;
 import com.example.backend.DTO.HealthRecordDTO;
 import com.example.backend.Entity.HealthRecord;
 import com.example.backend.Repository.HealthRecordRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class HealthRecordService {
@@ -23,9 +20,12 @@ public class HealthRecordService {
         this.healthRecordMapper = healthRecordMapper;
     }
 
-    @Transactional
     public void saveHealthRecord(HealthRecordDTO healthRecordDTO) {
         HealthRecord healthRecord = healthRecordMapper.toEntity(healthRecordDTO);
         healthRecordRepository.save(healthRecord);
+        System.out.println("Received health record data:");
+        System.out.println("Base Year: " + healthRecordDTO.getBaseYear());
+        System.out.println("Subscriber ID: " + healthRecordDTO.getSubscriberId());
+        System.out.println("City Code: " + healthRecordDTO.getCityCode());
     }
 }
