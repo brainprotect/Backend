@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 
 @Data
@@ -11,6 +12,7 @@ import lombok.Setter;
 @Table(name = "health_records")
 @Getter
 @Setter
+@ToString
 public class HealthRecord {
 
     @Id
